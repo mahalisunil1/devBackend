@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 require("dotenv").config()
-// const rateLimit = require('express-rate-limit');
+const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const mongoService = require("./services/mongoServices");
 const { appRouter } = require('./routes/appRouter');
 
@@ -40,11 +40,11 @@ const app = express()
 
 
 // Rate limiting middleware
-// const apiLimiter = rateLimit({
-//   windowMs: 15 * 60 * 1000, // 15 minutes
-//   max: 100, // Limit each IP to 100 requests per windowMs
-// });
-// app.use('/api/', apiLimiter);
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+app.use('/api/', apiLimiter);
 
 
 app.use("/",express.static('application'))
