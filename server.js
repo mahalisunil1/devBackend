@@ -46,7 +46,7 @@ const apiLimiter = rateLimit({
 });
 app.use('/api/', apiLimiter);
 
-app.use("/",express.static('application'))
+// app.use("/",express.static('application'))
 
 
 app.use(cors({
