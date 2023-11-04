@@ -3,7 +3,7 @@ const cors = require('cors');
 require("dotenv").config()
 // const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const mongoService = require("./services/mongoServices");
 const { appRouter } = require('./routes/appRouter');
 
