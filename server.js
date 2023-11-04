@@ -46,7 +46,6 @@ const apiLimiter = rateLimit({
 });
 app.use('/api/', apiLimiter);
 
-
 app.use("/",express.static('application'))
 
 
