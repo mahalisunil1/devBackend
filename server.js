@@ -50,7 +50,7 @@ app.use("/",express.static('application'))
 
 
 app.use(cors({
-  origin: 'https://localhost:4200', 
+  origin: 'http://localhost:4200', 
   methods: 'GET,POST',
   credentials: true, // Enable cookies and HTTP authentication
 }))
